@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F8F8F5;
+  --color-near-black: #20211F;
+  --color-charcoal: #20211F;
+  --color-muted-gray: #777A73;
+  --color-subtle-border: #E5E5DF;
+  --color-surface-white: #FFFFFF;
+  --color-surface-soft: #F1F1ED;
+  --color-surface-hover: #ECECE8;
+  --color-accent-lime: #D8F36A;
+  --color-accent-lime-muted: #EBF8B8;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  background-color: #F8F8F5;
+  color: #20211F;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle transitions */
+button, a, input, textarea {
+  transition-property: background-color, border-color, color, box-shadow, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 1.8s ease-in-out infinite;
+}
